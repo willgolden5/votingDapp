@@ -1,30 +1,28 @@
-import React from 'react'
+import React from "react";
 
 class Table extends React.Component {
   render() {
     return (
-      <table class='table'>
+      <table className='table'>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Votes</th>
+            <th>Candidates</th>
+            <th>Vote Tally</th>
           </tr>
         </thead>
-        <tbody >
-          {this.props.candidates.map((candidate) => {
-            return(
+        <tbody className='table-striped'>
+          {this.props.candidates.map(candidate => {
+            return (
               <tr>
-                <th>{candidate.id.toNumber()}</th>
                 <td>{candidate.name}</td>
-                <td>{candidate.voteCount.toNumber()}</td>
+                <td>{candidate.party}</td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
-    )
+    );
   }
 }
 
-export default Table
+export default Table;

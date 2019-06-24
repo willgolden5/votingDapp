@@ -6,6 +6,7 @@ contract Election {
         uint id;
         string name;
         uint voteCount;
+        string party;
     }
 
     // Store accounts that have voted
@@ -22,13 +23,13 @@ contract Election {
     );
 
     constructor () public {
-        addCandidate("Ricardo Pineda");
-        addCandidate("Richie Rich");
+        addCandidate("Ricardo Pineda", "Democrat");
+        addCandidate("Ricardo Milos", "Republican");
     }
 
-    function addCandidate (string memory _name) private {
+    function addCandidate (string memory _name, string memory _party) private {
         candidatesCount ++;
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
+        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0, _party);
     }
 
     function vote (uint _candidateId) public {
