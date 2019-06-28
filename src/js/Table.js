@@ -15,7 +15,7 @@ class Table extends React.Component {
             return (
               <tr>
                 <td>{candidate.name}</td>
-                <td>{candidate.party}</td>
+                <td>{candidate.voteCount.toNumber()}</td>
               </tr>
             );
           })}
